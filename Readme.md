@@ -74,5 +74,5 @@ Docker :
 
 Github :
     project sudah  saya uplod ke gthub. bisa kunjungi alamat berikut :
-        "https://github.com/galiehadi/service-test"
+        "https://github.com/galiehadi/service-test/tree/master"
     
