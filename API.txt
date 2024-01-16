@@ -1,0 +1,442 @@
+
+============================================== hasil JSON untuk menampilkan semua data menu ==============================================
+
+{
+  "limit": 1,
+  "message": "Success",
+  "object": [
+    {
+      "base_price": 50000,
+      "fillings": [
+        {
+          "filling_id": 1,
+          "filling_name": "Cheese",
+          "filling_price": 12000
+        },
+        {
+          "filling_id": 2,
+          "filling_name": "Tomato",
+          "filling_price": 9000
+        },
+        {
+          "filling_id": 3,
+          "filling_name": "Tuna",
+          "filling_price": 20000
+        }
+      ],
+      "menu_id": 1,
+      "menu_name": "Pizza",
+      "toppings": [
+        {
+          "topping_id": 10,
+          "topping_name": "Cheese",
+          "topping_price": 12000
+        },
+        {
+          "topping_id": 11,
+          "topping_name": "Chicken",
+          "topping_price": 18000
+        },
+        {
+          "topping_id": 12,
+          "topping_name": "Pepper",
+          "topping_price": 8000
+        }
+      ]
+    },
+    {
+      "base_price": 20000,
+      "fillings": [
+        {
+          "filling_id": 4,
+          "filling_name": "Apple Slices",
+          "filling_price": 14000
+        },
+        {
+          "filling_id": 5,
+          "filling_name": "Milk Cream",
+          "filling_price": 10000
+        },
+        {
+          "filling_id": 6,
+          "filling_name": "Blueberry",
+          "filling_price": 12000
+        }
+      ],
+      "menu_id": 2,
+      "menu_name": "Doughnut",
+      "toppings": [
+        {
+          "topping_id": 13,
+          "topping_name": "Blueberry",
+          "topping_price": 12000
+        },
+        {
+          "topping_id": 14,
+          "topping_name": "Cheese",
+          "topping_price": 12000
+        },
+        {
+          "topping_id": 15,
+          "topping_name": "Sugar Glaze",
+          "topping_price": 10000
+        }
+      ]
+    },
+    {
+      "base_price": 45000,
+      "fillings": [
+        {
+          "filling_id": 7,
+          "filling_name": "Tuna",
+          "filling_price": 20000
+        },
+        {
+          "filling_id": 8,
+          "filling_name": "Cheese",
+          "filling_price": 12000
+        },
+        {
+          "filling_id": 9,
+          "filling_name": "Chicken",
+          "filling_price": 18000
+        }
+      ],
+      "menu_id": 3,
+      "menu_name": "Pie",
+      "toppings": [
+        {
+          "topping_id": 16,
+          "topping_name": "Pepper",
+          "topping_price": 8000
+        },
+        {
+          "topping_id": 17,
+          "topping_name": "Blueberry",
+          "topping_price": 12000
+        },
+        {
+          "topping_id": 18,
+          "topping_name": "Apple Slices",
+          "topping_price": 14000
+        }
+      ]
+    }
+  ],
+  "page": 0,
+  "total": 1
+}
+
+penjelasan sedikit tentang struktur JSON. semua menu ada didalam data "object" dengan ketentuan sebagai berikut:
+    
+Menu 1: Pizza
+        Harga Dasar: Rp50.000
+        Fillings:
+            Cheese - Rp12.000
+            Tomato - Rp9.000
+            Tuna - Rp20.000
+        Topping:
+            Cheese - Rp12.000
+            Chicken - Rp18.000
+            Pepper - Rp8.000
+
+Menu 2: Doughnut
+        Harga Dasar: Rp20.000
+        Fillings:
+            Apple Slices - Rp14.000
+            Milk Cream - Rp10.000
+            Blueberry - Rp12.000
+        Topping:
+            Blueberry - Rp12.000
+            Cheese - Rp12.000
+            Sugar Glaze - Rp10.000
+
+Menu 3: Pie
+        Harga Dasar: Rp45.000
+        Fillings:
+            Tuna - Rp20.000
+            Cheese - Rp12.000
+            Chicken - Rp18.000
+        Topping:
+            Pepper - Rp8.000
+            Blueberry - Rp12.000
+            Apple Slices - Rp14.000
+
+
+
+============================================== contoh feedback jika topping atau fillings lebih dari 1 ==============================================
+
+jika toppings lebih dari 1 :
+{
+    "message": "Failed",
+    "object": {
+        "Message": "hanya boleh 1 jenis topping untuk setiap menu",
+        "Status": "Failed"
+    }
+}
+
+jika fillings lebih dari 1 :
+{
+    "message": "Failed",
+    "object": {
+        "Message": "hanya boleh 1 jenis filling untuk setiap menu",
+        "Status": "Failed"
+    }
+}
+
+
+
+============================================== contoh format JSON untuk poin 2,3 ==============================================
+
+{
+  "user": 2,
+  "date": "2024-01-16",
+  "orders": [
+    {
+      "menu_id": 1,
+      "quantity": 2,
+      "menu_name": "Pizza",
+      "base_price": 50000,
+      "toppings": [
+        {
+          "topping_id": 10,
+          "topping_name": "Cheese",
+          "topping_price": 12000
+        }
+      ],
+      "fillings": [
+        {
+          "filling_id": 3,
+          "filling_name": "Tuna",
+          "filling_price": 20000
+        }
+      ]
+    },
+    {
+      "menu_id": 2,
+      "quantity": 1,
+      "menu_name": "Doughnut",
+      "base_price": 20000,
+      "toppings": [
+        {
+          "topping_id": 13,
+          "topping_name": "Blueberry",
+          "topping_price": 12000
+        }
+      ],
+      "fillings": []
+    },
+    {
+      "menu_id": 3,
+      "quantity": 1,
+      "menu_name": "Pie",
+      "base_price": 45000,
+      "toppings": [
+        {
+          "topping_id": 16,
+          "topping_name": "Pepper",
+          "topping_price": 8000
+        }
+      ],
+      "fillings": [
+        {
+          "filling_id": 7,
+          "filling_name": "Tuna",
+          "filling_price": 20000
+        }
+      ]
+    },
+    {
+      "menu_id": 2,
+      "quantity": 2,
+      "menu_name": "Doughnut",
+      "base_price": 20000,
+      "toppings": [
+        {
+          "topping_id": 15,
+          "topping_name": "Sugar Glaze",
+          "topping_price": 10000
+        }
+      ],
+      "fillings": [
+        {
+          "filling_id": 4,
+          "filling_name": "Apple Slices",
+          "filling_price": 14000
+        }
+      ]
+    }
+  ]
+}
+
+sedikit penjelasan struktur JSON.
+- user bisa pesan banyak menu dengan ketentuan topping dan filling masing - masing maksimal 1 jenis. maka disini json yang dikirm berupa array yang 
+dilajutkan dengan isian data menu dan topping ataupun fillings yang di request. contoh :
+
+        {
+        "menu_id": 2,
+        "quantity": 1,
+        "menu_name": "Doughnut",
+        "base_price": 20000,
+        "toppings": [
+            {"topping_id": 13, "topping_name": "Blueberry", "topping_price": 12000}
+        ],
+        "fillings": []
+        },
+        {
+        "menu_id": 3,
+        "quantity": 1,
+        "menu_name": "Pie",
+        "base_price": 45000,
+        "toppings": [{"topping_id": 16, "topping_name": "Pepper", "topping_price": 8000}],
+        "fillings": [
+            {"filling_id": 7, "filling_name": "Tuna", "filling_price": 20000}
+        ]
+        },
+        {
+        "menu_id": 2,
+        "quantity": 2,
+        "menu_name": "Doughnut",
+        "base_price": 20000,
+        "toppings": [{"topping_id": 15, "topping_name": "Sugar Glaze", "topping_price": 10000}],
+        "fillings": [
+            {"filling_id": 4, "filling_name": "Apple Slices", "filling_price": 14000}
+        ]
+        }
+
+disini user customer bisa request Doughnut 2 dengan topping dan isian yang berbeda. jika mau pesan topping dan isian yang sama maka cukup ganti ""quantity": 2"
+ganti nilai 2 dengan jumlah menu yang diinginkan.
+
+
+
+============================================== contoh feedback JSON untuk poin 3 ==============================================
+
+{
+    "message": "Success",
+    "object": {
+        "Message": "",
+        "Status": "Success",
+        "date": "2024-01-16",
+        "orders": [
+            {
+                "base_price": 50000,
+                "date": "2024-01-16",
+                "fillings": [
+                    {
+                        "filling_id": 3,
+                        "filling_name": "Tuna",
+                        "filling_price": 20000
+                    }
+                ],
+                "menu_id": 1,
+                "menu_name": "Pizza",
+                "quantity": 2,
+                "toppings": [
+                    {
+                        "topping_id": 10,
+                        "topping_name": "Cheese",
+                        "topping_price": 12000
+                    }
+                ],
+                "total_price": 164000,
+                "user": 2
+            },
+            {
+                "base_price": 20000,
+                "date": "2024-01-16",
+                "fillings": [],
+                "menu_id": 2,
+                "menu_name": "Doughnut",
+                "quantity": 1,
+                "toppings": [
+                    {
+                        "topping_id": 13,
+                        "topping_name": "Blueberry",
+                        "topping_price": 12000
+                    }
+                ],
+                "total_price": 32000,
+                "user": 2
+            },
+            {
+                "base_price": 45000,
+                "date": "2024-01-16",
+                "fillings": [
+                    {
+                        "filling_id": 7,
+                        "filling_name": "Tuna",
+                        "filling_price": 20000
+                    }
+                ],
+                "menu_id": 3,
+                "menu_name": "Pie",
+                "quantity": 1,
+                "toppings": [
+                    {
+                        "topping_id": 16,
+                        "topping_name": "Pepper",
+                        "topping_price": 8000
+                    }
+                ],
+                "total_price": 73000,
+                "user": 2
+            },
+            {
+                "base_price": 20000,
+                "date": "2024-01-16",
+                "fillings": [
+                    {
+                        "filling_id": 4,
+                        "filling_name": "Apple Slices",
+                        "filling_price": 14000
+                    }
+                ],
+                "menu_id": 2,
+                "menu_name": "Doughnut",
+                "quantity": 2,
+                "toppings": [
+                    {
+                        "topping_id": 15,
+                        "topping_name": "Sugar Glaze",
+                        "topping_price": 10000
+                    }
+                ],
+                "total_price": 88000,
+                "user": 2
+            }
+        ],
+        "total_order_price": 357000,
+        "user": 2
+    }
+}
+
+masing - masing menu mempunyai total price, contoh "Doughnut" dengan quantity 2 :
+
+            {
+                "base_price": 20000,
+                "date": "2024-01-16",
+                "fillings": [
+                    {
+                        "filling_id": 4,
+                        "filling_name": "Apple Slices",
+                        "filling_price": 14000
+                    }
+                ],
+                "menu_id": 2,
+                "menu_name": "Doughnut",
+                "quantity": 2,
+                "toppings": [
+                    {
+                        "topping_id": 15,
+                        "topping_name": "Sugar Glaze",
+                        "topping_price": 10000
+                    }
+                ],
+                "total_price": 88000,
+                "user": 2
+            }
+
+lalu total keseluruhan menu disimpan di :
+
+        "total_order_price": 357000,
+        "user": 2

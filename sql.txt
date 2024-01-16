@@ -1,0 +1,50 @@
+-- Create Table
+CREATE TABLE menu (
+    menu_id SERIAL PRIMARY KEY,
+    menu_name VARCHAR(255) NOT NULL,
+    base_price DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE topping (
+    topping_id SERIAL PRIMARY KEY,
+    menu_id INT REFERENCES menu(menu_id),
+    topping_name VARCHAR(255) NOT NULL,
+    topping_price DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE filling (
+    filling_id SERIAL PRIMARY KEY,
+    menu_id INT REFERENCES menu(menu_id),
+    filling_name VARCHAR(255) NOT NULL,
+    filling_price DECIMAL(10, 2) NOT NULL
+);
+
+-- Insert data into the 'menu' table
+INSERT INTO menu (menu_name, base_price) VALUES
+    ('Pizza', 50000.00),
+    ('Doughnut', 20000.00),
+    ('Pie', 45000.00);
+
+-- Insert data into the 'topping' table
+INSERT INTO topping (menu_id, topping_name, topping_price) VALUES
+    (1, 'Cheese', 12000.00),
+    (1, 'Chicken', 18000.00),
+    (1, 'Pepper', 8000.00),
+    (2, 'Blueberry', 12000.00),
+    (2, 'Cheese', 12000.00),
+    (2, 'Sugar Glaze', 10000.00),
+    (3, 'Pepper', 8000.00),
+    (3, 'Blueberry', 12000.00),
+    (3, 'Apple Slices', 14000.00);
+
+-- Insert data into the 'filling' table
+INSERT INTO filling (menu_id, filling_name, filling_price) VALUES
+    (1, 'Cheese', 12000.00),
+    (1, 'Tomato', 9000.00),
+    (1, 'Tuna', 20000.00),
+    (2, 'Apple Slices', 14000.00),
+    (2, 'Milk Cream', 10000.00),
+    (2, 'Blueberry', 12000.00),
+    (3, 'Tuna', 20000.00),
+    (3, 'Cheese', 12000.00),
+    (3, 'Chicken', 18000.00);
