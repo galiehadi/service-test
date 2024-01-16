@@ -12,6 +12,7 @@ sebelum saya memulai penjelasan tentang tutorial testing aplikasi ini, dst. saya
 baik, dari pemahaman saya diatas semoga tidak ada pemahaman yang berbeda mengenai project yang saya buat. adapun pertanyaan yang mau disampaikan bisa ditanyakan kepada saya, untuk saat ini bisa melalui email galiehadisurya@gmail.com.
 
 
+
 Poin 1,2,3, Penjelasan tentang API dan kebutuhan User :
 Poin 1 :
     untuk menampilkan seluruh data menu ke user. kita menggunakan API dengan URL "localhost:8083/service/all/data". untuk contoh hasil JSON yang dikirm ke frontend, bisa dibuka di file "API.txt". step untuk mencoba di lokal:
@@ -45,7 +46,7 @@ berikut tools yang dibutuhkan untuk membuat project ini.
 
 Poin 5, upload project ke dockerhub dan github:
 Docker :
-    - project sudah di up ke docker hub, bisa pull menggunakan command berikut "docker pull galieh/public-service-test"
+    - project sudah di up ke docker hub, bisa pull menggunakan command berikut "docker pull galieh/service-test"
     - setelah berhasil amil image silahkan psang ke docker lokal anda. pastikan terlebih dahulu image ada dengan command "docker image ls"
     - jika semua aman build docker menjadi container dengan command berikut :
         "docker run -itd --name services-test --restart unless-stopped --memory="300M" -p 0.0.0.0:8083:8083 -e DB_USER=toor -e DB_PASSWORD=P@ssw0rd -e DB_HOST=192.168.56.1 services-test:v1.6.1"
